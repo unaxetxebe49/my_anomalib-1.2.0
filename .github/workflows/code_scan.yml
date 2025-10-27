@@ -22,7 +22,7 @@ jobs:
       - name: Bandit Scanning
         run: tox -e bandit-scan
       - name: UPLOAD BANDIT REPORT
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: bandit-report
           path: .tox/bandit-report.txt
@@ -44,7 +44,7 @@ jobs:
           TRIVY_DOWNLOAD_URL: ${{ vars.TRIVY_DOWNLOAD_URL }}
         run: tox -vv -e trivy-scan
       - name: Upload Trivy results artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: trivy-results
           path: |
